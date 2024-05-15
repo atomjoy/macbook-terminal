@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Codemax terminal</title>
+
+		<style>
+			.codemac {
+				font-size: 20px;
+				position: relative;
+				margin: 50px auto;
+				width: 96%;
+				height: auto;
+				border-radius: 5px;
+				background: #1a1a1a;
+				padding: 50px 20px 20px 20px;
+				box-sizing: border-box;
+			}
+
+			.codemac span {
+				color: #a2a2a2;
+				margin-top: 10px;
+				font-family: monospace, Consolas;
+			}
+			.codemac .toolbar {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: 100%;
+				height: 45px;
+				padding: 10px;
+				text-align: right;
+				box-sizing: border-box;
+				background: transparent;
+				box-sizing: border-box;
+				z-index: 1;
+			}
+
+			.codemac .toolbar-shadow {
+				border-bottom: 1px solid #191919;
+				box-shadow: 0px 3px 5px #101010aa;
+			}
+
+			.codemac .toolbar .copy-to-clipboard-button {
+				font-size: 0px;
+				padding: 6px;
+				margin-right: 5px;
+				vertical-align: top;
+				background: #a2a2a2;
+				box-shadow: 2px 2px #1a1a1a, 5px 5px #a2a2a2;
+				border-radius: 3px;
+				border: none;
+				cursor: pointer;
+			}
+			.codemac .toolbar .copy-to-clipboard-button:hover {
+				background: #f4c025;
+			}
+
+			.termynal::before {
+				content: '';
+				position: absolute;
+				top: 13px;
+				left: 13px;
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				background: #d9515d;
+				box-shadow: 1.45rem 0 #f4c025, 2.8rem 0 #3ec930;
+				box-sizing: border-box;
+			}
+
+			[data-termynal]::after {
+				content: 'bash';
+				font-size: 20px;
+				position: absolute;
+				color: #a2a2a2;
+				top: 10px;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				font-family: monospace, Consolas;
+			}
+
+			[data-ty] {
+				display: block;
+				line-height: 1;
+			}
+
+			[data-ty='input']::before {
+				content: '$';
+				color: #3ec930;
+				margin-right: 0.75em;
+				display: inline-block;
+			}
+			[data-ty='info'] {
+				padding-left: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="codemac">
+			<div class="toolbar toolbar-shadow">
+				<button class="copy-to-clipboard-button"><span>Copy</span></button>
+			</div>
+			<div class="termynal" data-termynal="">
+				<span data-ty="input">php send-sms.php</span>
+				<span data-ty="info">Your sms has been send!</span>
+			</div>
+		</div>
+	</body>
+</html>
